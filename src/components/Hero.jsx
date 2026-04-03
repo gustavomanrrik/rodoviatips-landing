@@ -1,6 +1,8 @@
 import './Hero.css';
 import { Send } from 'lucide-react';
 
+import logoImg from '../assets/logo.png';
+
 const Hero = () => {
   return (
     <section className="hero-section">
@@ -9,7 +11,7 @@ const Hero = () => {
       
       <div className="container hero-container">
         <div className="hero-content">
-          <img src="/assets/logo.png" alt="RODOVIA TIPS" className="hero-logo" />
+          <img src={logoImg} alt="RODOVIA TIPS" className="hero-logo" />
           <div className="badge">🚀 Estratégia Validada e Gratuita</div>
           
           <h1 className="hero-title">
