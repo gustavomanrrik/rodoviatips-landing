@@ -14,12 +14,12 @@ const SocialProof = () => {
           {/* Estatísticas de Credibilidade */}
           <div className="stats-panel glass-panel">
             <div className="stat-item">
-              <span className="stat-value text-gradient">89.4%</span>
+              <span className="stat-value text-gradient">92.4%</span>
               <span className="stat-label">Taxa de Acerto Média</span>
             </div>
             <div className="stat-divider"></div>
             <div className="stat-item">
-              <span className="stat-value text-gradient">+5.200</span>
+              <span className="stat-value text-gradient">+ de 500</span>
               <span className="stat-label">Membros Ativos</span>
             </div>
             <div className="stat-divider"></div>
@@ -57,7 +57,7 @@ const SocialProof = () => {
             </div>
             
             <div className="chat-floating-badge">
-              <MessageCircle size={16} /> Mais de 5.000 membros lucrando
+              <MessageCircle size={16} /> Mais de 500 membros lucrando
             </div>
           </div>
         </div>
