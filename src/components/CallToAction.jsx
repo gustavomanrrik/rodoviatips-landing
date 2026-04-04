@@ -5,6 +5,8 @@ import { Rocket, CheckCircle, Gift, AlertTriangle } from 'lucide-react';
 const CallToAction = () => {
   const [step, setStep] = useState(1);
   const [countdown, setCountdown] = useState(30);
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
 
   useEffect(() => {
     let timer;
@@ -26,6 +28,12 @@ const CallToAction = () => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
+    
+    const text = `Olá! Acabei de criar minha conta pelo link e quero solicitar minha análise de acesso ao grupo VIP.%0A%0A📧 *E-mail:* ${email}%0A📱 *Número:* ${phone}`;
+    const telegramUrl = `https://t.me/suprodoviatips?text=${text}`;
+    
+    window.open(telegramUrl, '_blank');
+    
     setStep(4);
   };
 
@@ -74,10 +82,24 @@ const CallToAction = () => {
 
                 <form className={`cta-form ${(step === 1 || step === 2) ? 'disabled-form' : ''}`} onSubmit={handleFormSubmit}>
                   <div className="input-group">
-                    <input type="email" placeholder="O e-mail da conta que você acabou de criar" required disabled={step !== 3} />
+                    <input 
+                      type="email" 
+                      placeholder="O e-mail da conta que você acabou de criar" 
+                      required 
+                      disabled={step !== 3} 
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
                   </div>
                   <div className="input-group">
-                    <input type="text" placeholder="Seu número do Telegram / Celular" required disabled={step !== 3} />
+                    <input 
+                      type="text" 
+                      placeholder="Seu número do Telegram / Celular" 
+                      required 
+                      disabled={step !== 3} 
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
+                    />
                   </div>
                   <button type="submit" className="btn btn-primary btn-large btn-block cta-btn" disabled={step !== 3}>
                     Enviar dados e aguardar 2h <Rocket size={20} />
